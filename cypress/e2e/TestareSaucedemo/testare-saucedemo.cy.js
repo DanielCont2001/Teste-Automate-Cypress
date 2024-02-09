@@ -4,12 +4,12 @@ describe('On Saucedemo', () => {
         cy.visit('https://www.saucedemo.com');
         cy.get('[data-test="username"]').type('standard_user')
         cy.get('[data-test="password"]').type('secret_sauce')
-        .get('[data-test="login-button"]').click();
+        cy.get('[data-test="login-button"]').click();
         cy.get('.shopping_cart_link').should('exist');
 
     })
 
-    it('Test Logout', () => {
+    it('Test Logout with standard user', () => {
         cy.visit('https://www.saucedemo.com');
         cy.get('[data-test="username"]').type('standard_user')
         cy.get('[data-test="password"]').type('secret_sauce')
